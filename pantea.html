@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dt. Pantea Sabeti — Özgeçmiş 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+
+        :root{
+            --rose-900:#6B2C3D;
+            --rose-700:#9B4D5E;
+            --rose-600:#B76E79;
+            --rose-500:#C4878F;
+            --rose-400:#D4A0A7;
+            --rose-300:#E4BFC4;
+            --rose-200:#F0D5D8;
+            --rose-100:#F7E8EA;
+            --rose-50:#FBF3F4;
+            --char-900:#1A1A2E;
+            --char-800:#2D2D3F;
+            --char-700:#3D3D52;
+            --char-600:#525266;
+            --char-500:#6B6B7B;
+            --char-400:#8E8E9A;
+            --char-300:#B3B3BC;
+            --char-200:#D4D4DA;
+            --char-100:#EDEDF0;
+            --char-50:#F7F7F8;
+            --cream:#FAF7F5;
+            --white:#FFFFFF;
+            --gold:#C9A96E;
+            --gold-light:#F5EDE0;
+        }
+
+        @page{size:A4;margin:0}
+
+        body{
+            font-family:'DM Sans',sans-serif;
+            background:var(--char-900);
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            padding:30px 0;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        .cv{
+            width:210mm;
+            min-height:297mm;
+            background:var(--cream);
+            position:relative;
+            overflow:hidden;
+            box-shadow:
+                0 0 0 1px rgba(0,0,0,0.03),
+                0 50px 100px -20px rgba(0,0,0,0.4);
+        }
+
+        /* ═══════════ HEADER ═══════════ */
+        .header{
+            background:var(--char-900);
+            position:relative;
+            overflow:hidden;
+        }
+
+        .header-grain{
+            position:absolute;inset:0;
+            opacity:0.04;
+            background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            pointer-events:none;
+        }
+
+        .header-glow{
+            position:absolute;
+            width:300px;height:300px;
+            border-radius:50%;
+            background:radial-gradient(circle,rgba(183,110,121,0.2),transparent 70%);
+            top:-100px;right:-50px;
+            pointer-events:none;
+        }
+
+        .header-inner{
+            position:relative;z-index:2;
+            padding:36px 44px 30px;
+        }
+
+        .header-top{
+            display:flex;justify-content:space-between;
+            align-items:flex-start;
+            margin-bottom:18px;
+        }
+
+        .header-left{display:flex;flex-direction:column;gap:8px}
+
+        .name-pre{
+            font-size:10px;font-weight:500;
+            color:var(--rose-400);
+            letter-spacing:4px;
+            text-transform:uppercase;
+        }
+
+        .name{
+            font-family:'Playfair Display',serif;
+            font-size:44px;
+            font-weight:600;
+            color:var(--white);
+            line-height:1.05;
+            letter-spacing:-0.5px;
+        }
+
+        .name em{
+            font-style:italic;
+            font-weight:400;
+            color:var(--rose-300);
+        }
+
+        .title-line{
+            display:flex;align-items:center;gap:12px;
+            margin-top:4px;
+        }
+
+        .title-text{
+            font-size:13px;font-weight:300;
+            color:rgba(255,255,255,0.5);
+            letter-spacing:3px;
+            text-transform:uppercase;
+        }
+
+        .title-dot{
+            width:4px;height:4px;border-radius:50%;
+            background:var(--rose-500);
+        }
+
+        .header-right{
+            display:flex;flex-direction:column;
+            gap:6px;align-items:flex-end;
+            padding-top:10px;
+        }
+
+        .contact{
+            display:flex;align-items:center;gap:8px;
+            font-size:10.5px;
+            color:rgba(255,255,255,0.65);
+            font-weight:400;
+        }
+
+        .contact-icon{
+            width:28px;height:28px;
+            border-radius:50%;
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            display:flex;align-items:center;justify-content:center;
+            flex-shrink:0;
+        }
+
+        .contact-icon svg{width:12px;height:12px;fill:var(--rose-400)}
+
+        /* Summary bar */
+        .summary{
+            font-size:11px;
+            line-height:1.8;
+            color:rgba(255,255,255,0.5);
+            font-weight:300;
+            max-width:100%;
+            border-top:1px solid rgba(255,255,255,0.06);
+            padding-top:16px;
+        }
+
+        /* ═══════════ METRICS ═══════════ */
+        .metrics{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            background:var(--white);
+            border-bottom:1px solid var(--char-100);
+        }
+
+        .metric{
+            padding:16px 20px;
+            text-align:center;
+            position:relative;
+        }
+
+        .metric:not(:last-child)::after{
+            content:'';position:absolute;right:0;top:25%;bottom:25%;
+            width:1px;background:var(--char-100);
+        }
+
+        .metric-num{
+            font-family:'Playfair Display',serif;
+            font-size:24px;font-weight:700;
+            color:var(--rose-700);
+            line-height:1.2;
+        }
+
+        .metric-label{
+            font-size:8px;font-weight:600;
+            color:var(--char-400);
+            letter-spacing:2px;
+            text-transform:uppercase;
+            margin-top:2px;
+        }
+
+        /* ═══════════ BODY GRID ═══════════ */
+        .body{
+            display:grid;
+            grid-template-columns:1fr 200px;
+        }
+
+        /* ═══════════ MAIN ═══════════ */
+        .main{
+            padding:22px 28px 18px 36px;
+            display:flex;flex-direction:column;gap:18px;
+        }
+
+        .section{display:flex;flex-direction:column;gap:10px}
+
+        .s-header{
+            display:flex;align-items:center;gap:10px;
+        }
+
+        .s-num{
+            font-family:'Playfair Display',serif;
+            font-size:18px;font-weight:700;
+            color:var(--rose-200);
+            line-height:1;
+            min-width:20px;
+        }
+
+        .s-title{
+            font-size:9.5px;font-weight:700;
+            letter-spacing:3px;text-transform:uppercase;
+            color:var(--char-800);
+        }
+
+        .s-line{
+            flex:1;height:1px;
+            background:linear-gradient(90deg,var(--char-200),transparent);
+        }
+
+        /* Education */
+        .edu-card{
+            display:flex;justify-content:space-between;align-items:center;
+            background:var(--white);
+            border:1px solid var(--char-100);
+            border-left:3px solid var(--rose-600);
+            border-radius:2px 10px 10px 2px;
+            padding:14px 20px;
+        }
+
+        .edu-card h3{
+            font-size:13px;font-weight:700;
+            color:var(--char-800);margin-bottom:2px;
+        }
+
+        .edu-card p{
+            font-size:10px;color:var(--char-500);
+        }
+
+        .edu-badge{
+            background:var(--rose-700);
+            color:var(--white);
+            padding:5px 14px;border-radius:20px;
+            font-size:10px;font-weight:600;
+            white-space:nowrap;
+        }
+
+        /* Timeline clinics */
+        .timeline{display:flex;flex-direction:column;gap:0}
+
+        .tl-item{
+            display:grid;
+            grid-template-columns:70px 20px 1fr;
+            gap:0;
+            min-height:52px;
+        }
+
+        .tl-date{
+            font-size:8px;font-weight:600;
+            color:var(--rose-700);
+            text-align:right;
+            padding-top:4px;
+            padding-right:12px;
+            line-height:1.4;
+        }
+
+        .tl-line{
+            display:flex;flex-direction:column;
+            align-items:center;
+            position:relative;
+        }
+
+        .tl-dot{
+            width:10px;height:10px;
+            border-radius:50%;
+            background:var(--white);
+            border:2px solid var(--rose-500);
+            position:relative;z-index:2;
+            margin-top:4px;
+            flex-shrink:0;
+        }
+
+        .tl-connector{
+            width:1px;flex:1;
+            background:var(--rose-200);
+        }
+
+        .tl-item:last-child .tl-connector{background:transparent}
+
+        .tl-content{
+            padding:0 0 14px 12px;
+        }
+
+        .tl-title{
+            font-size:11px;font-weight:700;
+            color:var(--char-800);
+            margin-bottom:3px;
+        }
+
+        .tl-desc{
+            font-size:9px;color:var(--char-500);
+            line-height:1.5;
+        }
+
+        .tl-patients{
+            display:inline-flex;align-items:center;gap:3px;
+            margin-top:4px;
+            font-size:8px;font-weight:600;
+            color:var(--rose-600);
+            background:var(--rose-50);
+            padding:2px 8px;border-radius:10px;
+        }
+
+        .tl-patients b{
+            font-size:11px;font-weight:800;
+            color:var(--rose-700);
+        }
+
+        /* Competencies */
+        .comps{
+            display:grid;grid-template-columns:1fr 1fr;
+            gap:4px 14px;
+        }
+
+        .comp{
+            font-size:9.5px;color:var(--char-600);
+            display:flex;align-items:center;gap:8px;
+            padding:3px 0;
+        }
+
+        .comp-bar{
+            width:16px;height:3px;
+            border-radius:2px;
+            background:linear-gradient(90deg,var(--rose-500),var(--rose-300));
+            flex-shrink:0;
+        }
+
+        /* ═══════════ SIDEBAR ═══════════ */
+        .side{
+            background:var(--white);
+            border-left:1px solid var(--char-100);
+            padding:22px 18px 18px;
+            display:flex;flex-direction:column;gap:18px;
+        }
+
+        .sb{display:flex;flex-direction:column;gap:8px}
+
+        .sb-label{
+            font-size:7.5px;font-weight:700;
+            letter-spacing:3px;text-transform:uppercase;
+            color:var(--char-400);
+        }
+
+        /* Language bars */
+        .lang-list{display:flex;flex-direction:column;gap:10px}
+
+        .lang-item{display:flex;flex-direction:column;gap:4px}
+
+        .lang-top{
+            display:flex;justify-content:space-between;align-items:baseline;
+        }
+
+        .lang-name{font-size:11px;font-weight:600;color:var(--char-800)}
+
+        .lang-level{
+            font-size:8px;color:var(--char-400);
+            font-weight:400;font-style:italic;
+        }
+
+        .lang-bar{
+            height:4px;border-radius:2px;
+            background:var(--char-100);
+            overflow:hidden;
+        }
+
+        .lang-fill{
+            height:100%;border-radius:2px;
+            background:linear-gradient(90deg,var(--rose-600),var(--rose-400));
+            transition:width 0.8s ease;
+        }
+
+        /* Skills */
+        .skill-grid{display:flex;flex-wrap:wrap;gap:4px}
+
+        .skill{
+            padding:4px 8px;
+            border-radius:4px;
+            font-size:8px;font-weight:500;
+            color:var(--char-600);
+            background:var(--cream);
+            border:1px solid var(--char-100);
+            transition:all 0.2s;
+        }
+
+        .skill:hover{
+            border-color:var(--rose-300);
+            color:var(--rose-700);
+            background:var(--rose-50);
+        }
+
+        /* Traits */
+        .trait-list{display:flex;flex-direction:column;gap:5px}
+
+        .trait{
+            font-size:9px;color:var(--char-500);
+            display:flex;align-items:center;gap:7px;
+        }
+
+        .trait-icon{
+            width:14px;height:14px;border-radius:50%;
+            background:linear-gradient(135deg,var(--rose-600),var(--rose-400));
+            display:flex;align-items:center;justify-content:center;
+            flex-shrink:0;
+        }
+
+        .trait-icon svg{width:7px;height:7px;fill:white}
+
+        /* Ref */
+        .ref-note{
+            font-size:9px;color:var(--char-400);
+            font-style:italic;
+        }
+
+        /* ═══════════ FOOTER ═══════════ */
+        .foot{
+            text-align:center;
+            font-size:7.5px;color:var(--char-400);
+            padding:8px;
+            border-top:1px solid var(--char-100);
+            background:var(--white);
+            letter-spacing:1.5px;
+            text-transform:uppercase;
+        }
+
+        /* ═══════════ RESPONSIVE ═══════════ */
+        @media(max-width:900px){
+            body{padding:0}
+            .cv{width:100%;min-height:auto;box-shadow:none}
+            .header-inner{padding:28px 28px 24px}
+            .name{font-size:36px}
+            .main{padding:18px 20px 14px 24px}
+        }
+
+        @media(max-width:640px){
+            body{padding:0;background:var(--cream)}
+            .cv{width:100%;min-height:auto;box-shadow:none}
+
+            .header-inner{padding:24px 20px 20px}
+
+            .header-top{
+                flex-direction:column;
+                gap:16px;
+            }
+
+            .header-right{
+                align-items:flex-start;
+                flex-direction:row;
+                flex-wrap:wrap;
+                gap:8px;
+            }
+
+            .name{font-size:30px}
+            .title-text{font-size:11px;letter-spacing:2px}
+            .summary{font-size:10.5px}
+            .contact{font-size:9.5px}
+
+            .metrics{grid-template-columns:repeat(2,1fr)}
+            .metric{padding:12px 14px}
+            .metric-num{font-size:20px}
+
+            .body{grid-template-columns:1fr}
+            .main{padding:16px 18px}
+
+            .tl-item{grid-template-columns:55px 16px 1fr}
+            .tl-title{font-size:10.5px}
+
+            .edu-card{
+                flex-direction:column;
+                align-items:flex-start;
+                gap:8px;
+            }
+
+            .comps{grid-template-columns:1fr}
+
+            .side{
+                border-left:none;
+                border-top:1px solid var(--char-100);
+                padding:18px 20px;
+            }
+
+            .lang-list{
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:12px;
+            }
+
+            .skill-grid{gap:5px}
+            .skill{font-size:9px;padding:5px 10px}
+
+            .trait-list{
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:6px;
+            }
+        }
+
+        @media(max-width:380px){
+            .name{font-size:26px}
+            .metrics{grid-template-columns:repeat(2,1fr)}
+            .lang-list{grid-template-columns:1fr}
+            .trait-list{grid-template-columns:1fr}
+        }
+
+        @media print{
+            body{background:white;padding:0}
+            .cv{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+            .body{grid-template-columns:1fr 200px}
+        }
+    </style>
+</head>
+<body>
+<div class="cv">
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="header">
+        <div class="header-grain"></div>
+        <div class="header-glow"></div>
+        <div class="header-inner">
+            <div class="header-top">
+                <div class="header-left">
+                    <div class="name-pre">Diş Hekimi · Dt.</div>
+                    <h1 class="name">Pantea <em>Sabeti</em></h1>
+                    <div class="title-line">
+                        <span class="title-text">2026 Mezunu</span>
+                        <span class="title-dot"></span>
+                        <span class="title-text">İstanbul</span>
+                        <span class="title-dot"></span>
+                        <span class="title-text">4 Dil</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="contact">
+                        <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+                        +90 551 995 50 42
+                    </div>
+                    <div class="contact">
+                        <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+                        dr.pantea.sabeti@gmail.com
+                    </div>
+                    <div class="contact">
+                        <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>
+                        İstanbul, Türkiye
+                    </div>
+                </div>
+            </div>
+            <p class="summary">
+                İstanbul Gelişim Üniversitesi Diş Hekimliği Fakültesi 2026 mezunu. 5 yıllık kapsamlı akademik
+                eğitim sürecinde tüm diş hekimliği disiplinlerinde 2 yıl aktif klinik staj deneyimi kazanmış,
+                toplam 160+ hastaya bireysel tedavi uygulamış, dört dile hakim, hasta iletişimi güçlü diş hekimi.
+            </p>
+        </div>
+    </header>
+
+    <!-- ═══════════ METRICS ═══════════ -->
+    <div class="metrics">
+        <div class="metric">
+            <div class="metric-num">160+</div>
+            <div class="metric-label">Tedavi Edilen Hasta</div>
+        </div>
+        <div class="metric">
+            <div class="metric-num">8</div>
+            <div class="metric-label">Klinik Rotasyon</div>
+        </div>
+        <div class="metric">
+            <div class="metric-num">4</div>
+            <div class="metric-label">Dil Yetkinliği</div>
+        </div>
+        <div class="metric">
+            <div class="metric-num">2 Yıl</div>
+            <div class="metric-label">Klinik Deneyim</div>
+        </div>
+    </div>
+
+    <div class="body">
+        <!-- ═══════════ MAIN ═══════════ -->
+        <div class="main">
+
+            <!-- Eğitim -->
+            <div class="section">
+                <div class="s-header">
+                    <span class="s-num">01</span>
+                    <span class="s-title">Eğitim</span>
+                    <span class="s-line"></span>
+                </div>
+                <div class="edu-card">
+                    <div>
+                        <h3>Diş Hekimliği Fakültesi — Lisans (5 Yıl)</h3>
+                        <p>İstanbul Gelişim Üniversitesi · İstanbul, Türkiye</p>
+                    </div>
+                    <div class="edu-badge">2021 — 2026</div>
+                </div>
+            </div>
+
+            <!-- Klinik Stajlar — Timeline -->
+            <div class="section">
+                <div class="s-header">
+                    <span class="s-num">02</span>
+                    <span class="s-title">Klinik Staj Deneyimi</span>
+                    <span class="s-line"></span>
+                </div>
+                <div class="timeline">
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2026</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Restoratif Diş Tedavisi</div>
+                            <div class="tl-desc">Anterior/posterior kompozit, amalgam, cam iyonomer, inlay/onlay uygulamaları</div>
+                            <div class="tl-patients"><b>~25</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2026</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Endodonti</div>
+                            <div class="tl-desc">Tek/çok köklü kanal tedavisi, döner alet sistemleri, NaOCl/EDTA irrigasyon</div>
+                            <div class="tl-patients"><b>~20</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2025</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Protetik Diş Tedavisi</div>
+                            <div class="tl-desc">Kuron, köprü preparasyonu, parsiyel/total protez, geçici restorasyon</div>
+                            <div class="tl-patients"><b>~20</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2025</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Ağız, Diş ve Çene Cerrahisi</div>
+                            <div class="tl-desc">Basit/komplike çekim, gömülü 20 yaş cerrahisi, lokal anestezi, sütur</div>
+                            <div class="tl-patients"><b>~30</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2025</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Periodontoloji</div>
+                            <div class="tl-desc">Scaling, kök yüzeyi düzleştirme, periodontal sondlama, oral hijyen eğitimi</div>
+                            <div class="tl-patients"><b>~20</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2025<br>2026</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Pedodonti</div>
+                            <div class="tl-desc">Çocuk davranış yönetimi, fissür örtücü, flor, süt dişi tedavileri, pulpotomi</div>
+                            <div class="tl-patients"><b>~15</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2025<br>2026</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Ortodonti</div>
+                            <div class="tl-desc">Model analizi, sefalometrik değerlendirme, hareketli aparey uygulamaları</div>
+                            <div class="tl-patients"><b>~10</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                    <div class="tl-item">
+                        <div class="tl-date">2024<br>2025</div>
+                        <div class="tl-line"><div class="tl-dot"></div><div class="tl-connector"></div></div>
+                        <div class="tl-content">
+                            <div class="tl-title">Oral Diagnoz ve Radyoloji</div>
+                            <div class="tl-desc">Panoramik, periapikal, CBCT yorumlama, anamnez, muayene protokolleri</div>
+                            <div class="tl-patients"><b>~20</b>&nbsp;hasta</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Yetkinlikler -->
+            <div class="section">
+                <div class="s-header">
+                    <span class="s-num">03</span>
+                    <span class="s-title">Mesleki Yetkinlikler</span>
+                    <span class="s-line"></span>
+                </div>
+                <div class="comps">
+                    <div class="comp"><span class="comp-bar"></span>Hasta anamnezi ve muayene</div>
+                    <div class="comp"><span class="comp-bar"></span>Kapsamlı tedavi planlaması</div>
+                    <div class="comp"><span class="comp-bar"></span>Lokal anestezi teknikleri</div>
+                    <div class="comp"><span class="comp-bar"></span>Radyografik değerlendirme</div>
+                    <div class="comp"><span class="comp-bar"></span>Sterilizasyon ve enfeksiyon kontrolü</div>
+                    <div class="comp"><span class="comp-bar"></span>Acil dental müdahale</div>
+                    <div class="comp"><span class="comp-bar"></span>Hasta eğitimi ve motivasyonu</div>
+                    <div class="comp"><span class="comp-bar"></span>Multidisipliner yaklaşım</div>
+                    <div class="comp"><span class="comp-bar"></span>Klinik dokümantasyon</div>
+                    <div class="comp"><span class="comp-bar"></span>Ergonomik çalışma prensibi</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ═══════════ SIDEBAR ═══════════ -->
+        <aside class="side">
+
+            <!-- Diller -->
+            <div class="sb">
+                <div class="sb-label">Diller</div>
+                <div class="lang-list">
+                    <div class="lang-item">
+                        <div class="lang-top">
+                            <span class="lang-name">Türkçe</span>
+                            <span class="lang-level">Ana dil</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-top">
+                            <span class="lang-name">Farsça</span>
+                            <span class="lang-level">Ana dil</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-top">
+                            <span class="lang-name">İngilizce</span>
+                            <span class="lang-level">İleri düzey</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width:80%"></div></div>
+                    </div>
+                    <div class="lang-item">
+                        <div class="lang-top">
+                            <span class="lang-name">Almanca</span>
+                            <span class="lang-level">İleri düzey</span>
+                        </div>
+                        <div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Klinik Beceriler -->
+            <div class="sb">
+                <div class="sb-label">Klinik Beceriler</div>
+                <div class="skill-grid">
+                    <span class="skill">Kompozit</span>
+                    <span class="skill">Kanal Tedavisi</span>
+                    <span class="skill">Diş Çekimi</span>
+                    <span class="skill">Protez</span>
+                    <span class="skill">Scaling</span>
+                    <span class="skill">Beyazlatma</span>
+                    <span class="skill">Fissür Örtücü</span>
+                    <span class="skill">Flor</span>
+                    <span class="skill">Ölçü Alma</span>
+                    <span class="skill">Anestezi</span>
+                    <span class="skill">Sütur</span>
+                    <span class="skill">CBCT</span>
+                    <span class="skill">Radyografi</span>
+                    <span class="skill">Estetik</span>
+                    <span class="skill">Pulpotomi</span>
+                </div>
+            </div>
+
+            <!-- Kişisel -->
+            <div class="sb">
+                <div class="sb-label">Kişisel Özellikler</div>
+                <div class="trait-list">
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Hasta odaklı yaklaşım
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Takım çalışmasına yatkın
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Detaylara dikkatli ve titiz
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Hızlı öğrenme yeteneği
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Stres yönetimi
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Empati ve iletişim
+                    </div>
+                    <div class="trait">
+                        <span class="trait-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></span>
+                        Mesleki gelişime açıklık
+                    </div>
+                </div>
+            </div>
+
+            <!-- Referans -->
+            <div class="sb" style="margin-top:auto">
+                <div class="sb-label">Referanslar</div>
+                <p class="ref-note">Talep üzerine sunulabilir.</p>
+            </div>
+
+        </aside>
+    </div>
+
+    <div class="foot">
+        Dt. Pantea Sabeti &nbsp;·&nbsp; Özgeçmiş &nbsp;·&nbsp; Mart 2026
+    </div>
+
+</div>
+</body>
+</html>
