@@ -669,10 +669,121 @@
             letter-spacing:1px;
         }
 
+        /* ═══════════ RESPONSIVE ═══════════ */
+
+        /* Tablet */
+        @media(max-width:900px){
+            body{padding:0}
+            .cv{width:100%;min-height:auto;box-shadow:none}
+            .hero-inner{padding:28px 28px 22px}
+            .hero-name{font-size:36px}
+            .hero-desc{font-size:10.5px}
+            .stats-bar{grid-template-columns:repeat(5,1fr)}
+            .stat{padding:10px 8px}
+            .stat-num{font-size:16px}
+            .main{padding:18px 20px 14px 24px}
+        }
+
+        /* Mobile */
+        @media(max-width:640px){
+            body{padding:0;background:var(--white)}
+            .cv{width:100%;min-height:auto;box-shadow:none;border-radius:0}
+
+            .hero-inner{
+                grid-template-columns:1fr;
+                gap:16px;
+                padding:24px 20px 20px;
+            }
+
+            .hero-right{
+                align-items:flex-start;
+                flex-direction:row;
+                flex-wrap:wrap;
+                gap:6px;
+            }
+
+            .hero-name{font-size:30px}
+            .hero-subtitle{font-size:11px;letter-spacing:2px}
+            .hero-desc{font-size:10.5px}
+            .chip{font-size:9px;padding:5px 10px}
+
+            .stats-bar{
+                grid-template-columns:repeat(3,1fr);
+                gap:0;
+            }
+            .stat{padding:10px 6px}
+            .stat-num{font-size:15px}
+            .stat-label{font-size:7px;letter-spacing:1px}
+
+            .cv-body{grid-template-columns:1fr}
+
+            .main{padding:16px 18px}
+            .sec{gap:8px}
+
+            .clinics{grid-template-columns:1fr}
+
+            .edu{
+                flex-direction:column;
+                align-items:flex-start;
+                gap:8px;
+            }
+
+            .edu h3{font-size:12px}
+
+            .cl-name{font-size:10px}
+            .cl-list li{font-size:8.5px}
+
+            .project-card{padding:14px 16px}
+            .project-name{font-size:14px}
+            .project-stats{grid-template-columns:repeat(2,1fr)}
+            .project-desc{font-size:9.5px}
+
+            .comps{grid-template-columns:1fr}
+            .comp{font-size:9px}
+
+            /* Sidebar becomes full-width below main */
+            .side{
+                border-left:none;
+                border-top:1px solid var(--slate-200);
+                padding:18px 20px;
+            }
+
+            .langs{
+                flex-direction:row;
+                flex-wrap:wrap;
+                gap:12px;
+            }
+
+            .lang{min-width:120px}
+
+            .pills{gap:4px}
+            .pill{font-size:8.5px;padding:4px 8px}
+
+            .certs{flex-direction:row;flex-wrap:wrap;gap:8px}
+            .cert{flex:1;min-width:140px}
+
+            .traits{
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:6px;
+            }
+        }
+
+        /* Small phone */
+        @media(max-width:380px){
+            .hero-name{font-size:26px}
+            .stats-bar{grid-template-columns:repeat(2,1fr)}
+            .hero-badges{flex-direction:column;gap:4px}
+            .project-stats{grid-template-columns:repeat(2,1fr)}
+            .traits{grid-template-columns:1fr}
+        }
+
         /* Print */
         @media print{
             body{background:white;padding:0}
-            .cv{margin:0;box-shadow:none}
+            .cv{width:210mm;min-height:297mm;margin:0;box-shadow:none}
+            .cv-body{grid-template-columns:1fr 190px}
+            .clinics{grid-template-columns:1fr 1fr}
             .hero-badge-dot{animation:none}
         }
     </style>
